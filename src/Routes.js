@@ -3,7 +3,7 @@ import {BrowserRouter, Switch,  Route} from 'react-router-dom';
 import Home from './core/Home';
 
 
-const Routes = () => {          {/*es6 way*/}
+const Routes = () => {          /*es6 way*/
     return (
         <BrowserRouter>
         <Switch>
