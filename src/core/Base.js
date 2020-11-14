@@ -1,11 +1,13 @@
+
 import React, {children} from 'react';
+
+
 
 const Base = ({
     title = "My Title",
     description = "My description",
     className="bg-dark text-white p-4",
     children,
-
 }) => {
     return (
         <div>

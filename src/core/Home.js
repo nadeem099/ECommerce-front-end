@@ -1,3 +1,4 @@
+
 import React from 'react';
 // import Test from './test';
 import { useState, useEffect } from 'react';
@@ -21,27 +22,25 @@ export default function Home() {
                     setProducts(data);
                 }
             });
+       
     };
+
     useEffect(() => {
         loadAllProducts();
-    }, []);
-
-
+    });
 
     return (
-        <Base title="Home Page" description="welcome to e-Tshirt store">
-        <div className="contain">
-            <h1>Home Component</h1>
+        <Base title="Home Page" description="welcome to Tshirt store">
+            <div>
+            <h1>Home Component</h1> 
             <div className="row">
-                {products.map((product, index) => {
-                    return (
-                        <div key={index} className="col-4 mb-4">
-                            <Card product={product} />
-                        </div>
-
-                    );
-                })}
-
+                {
+                    products && products.map((product, index) => (
+                            <div key={index} className="col-4 mb-4"> 
+                                <Card product={product}/>
+                            </div>
+                    ))
+                }
             </div>
         </div>
         </Base> 
