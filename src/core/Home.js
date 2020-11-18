@@ -31,15 +31,17 @@ export default function Home() {
 
     return (
         <Base title="Home Page" description="welcome to Tshirt store">
-            <div>
+            <div className="contain">
             <h1>Home Component</h1> 
             <div className="row">
                 {
-                    products && products.map((product, index) => (
+                    products.map((product, index) => {
+                        return(
                             <div key={index} className="col-4 mb-4"> 
                                 <Card product={product}/>
                             </div>
-                    ))
+                        );
+                        })
                 }
             </div>
         </div>

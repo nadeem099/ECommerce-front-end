@@ -17,15 +17,26 @@ export const signup = (user) => {
 };
 
 export const signin = (user) => {
-    const formData = new formData();
+    const formData = new FormData();
     for(const name in user){
         formData.append(name, user[name]);
     }
+
+    //Alternative 
+    // const {email, password} = user;
+    // const formData = new FormData;
+    // formData.append('email', email)
+    // formData.append('password', password)
+    // for(var key of formData.keys()){
+    //     console.log("My Key: ", key)
+    // }
+
     return fetch(`${API}user/login/`,{
         method:"POST",
-        body:JSON.stringify(user)
+        body:formData    //JSON.stringify(user)
     })
     .then((response) => {
+        console.log("SUCCESS", response);
         return response.json();
     })
     .catch((err) => console.log(err));
